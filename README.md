@@ -1,6 +1,8 @@
 # Hum Aahang
 
-HumAhang is an Urdu-first accessibility companion for the Bano Qabil × Alibaba Cloud AI Hackathon, bringing speech, text, and visual assistance together to help people communicate and understand their surroundings with greater independence.
+HumAhang is an Urdu-first accessibility companion that brings speech, text, and visual assistance together, helping special people communicate, understand their surroundings, and connect with greater independence.
+
+Built for the Bano Qabil × Alibaba Cloud AI Hackathon.
 
 ## Android portfolio build
 

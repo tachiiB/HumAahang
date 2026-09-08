@@ -9,6 +9,8 @@ web-build/
 .qa/
 output/
 artifacts/
+ANDROID-BUILD-STATUS.md
+tasks/android-apk-*.md
 .railway/
 server/
 .env*
