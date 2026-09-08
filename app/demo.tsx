@@ -3,7 +3,7 @@ import { ActivityIndicator, Platform, ScrollView, StyleSheet, View } from 'react
 import { Pressable, Text, SafeAreaView, Ionicons } from '../src/localized-ui';
 import { Header } from '../src/components';
 import { router } from '../src/navigation';
-import { createJudgeAccessClient, judgeAccessMessages, takeJudgeAccessKey, type JudgeAccessState } from '../src/judge-access-client';
+import { createJudgeAccessClient, judgeAccessMessages, resolveJudgeAccessOrigin, takeJudgeAccessKey, type JudgeAccessState } from '../src/judge-access-client';
 import { serviceCredentials } from '../src/service-connection';
 import { colors, radius, space } from '../src/theme';
 
@@ -19,7 +19,7 @@ export default function JudgeDemo() {
         catch { key.current = null; }
       }
     }
-    const connection = createJudgeAccessClient({ origin: typeof window !== 'undefined' ? window.location.origin : '', credentials: serviceCredentials, onState: setState });
+    const connection = createJudgeAccessClient({ origin: resolveJudgeAccessOrigin(typeof window !== 'undefined' ? window : undefined), credentials: serviceCredentials, onState: setState });
     client.current = connection;
     let alive = true;
     // React Strict Mode may replay setup/cleanup. Defer so the discarded mount makes no request.

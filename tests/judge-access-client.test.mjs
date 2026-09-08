@@ -1,6 +1,6 @@
 import assert from 'node:assert/strict';
 import { test } from 'node:test';
-import { createJudgeAccessClient, judgeAccessMessages, takeJudgeAccessKey } from '../src/judge-access-client.ts';
+import { createJudgeAccessClient, judgeAccessMessages, resolveJudgeAccessOrigin, takeJudgeAccessKey } from '../src/judge-access-client.ts';
 import { judgeAccessRows } from '../src/judge-access-copy.ts';
 import { hasTranslation, translate } from '../src/locale.ts';
 
@@ -12,6 +12,13 @@ function setup(fetcher, more = {}) {
   const client = createJudgeAccessClient({ origin: 'https://demo.example', credentials, fetcher, onState: state => states.push(state), ...more });
   return { client, credentials, states };
 }
+test('demo origin tolerates a native window without browser location', () => {
+  assert.equal(resolveJudgeAccessOrigin({}), '');
+  assert.equal(resolveJudgeAccessOrigin(), '');
+});
+test('demo origin preserves the browser origin for private-link authentication', () => {
+  assert.equal(resolveJudgeAccessOrigin({ location: new URL('https://demo.example/demo#access=private') }), 'https://demo.example');
+});
 test('private key is consumed from HTTPS fragment and removed from current history', () => {
   let cleaned;
   assert.equal(takeJudgeAccessKey({ href: `https://demo.example/demo#access=${key}` }, url => { cleaned = url; }), key);

@@ -43,6 +43,13 @@ server.env
 /ios
 /android
 /dist-check
+/dist-android-check/
+/artifacts/
+/ANDROID-BUILD-STATUS.md
+/tasks/android-apk-*.md
+*.apk
+*.keystore
+credentials.json
 /.qa/
 
 # Local design/reference archives (not runtime application source)

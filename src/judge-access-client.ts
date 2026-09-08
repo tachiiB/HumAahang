@@ -10,6 +10,11 @@ export const judgeAccessMessages = {
 } as const;
 export type JudgeAccessState = { phase: 'idle' | 'connecting' | 'connected' | 'error'; message: string };
 
+export function resolveJudgeAccessOrigin(browser?: { location?: { origin: string } }): string {
+  // React Native can expose window without the browser's location object.
+  return browser?.location?.origin ?? '';
+}
+
 /** Only the fragment carries access. Scrub it before any request or navigation. */
 export function takeJudgeAccessKey(location: { href: string }, replace: (url: string) => void): string | null {
   const url = new URL(location.href), fragment = url.hash;

@@ -2,6 +2,12 @@
 
 HumAhang is an Urdu-first accessibility companion for the Bano Qabil × Alibaba Cloud AI Hackathon, bringing speech, text, and visual assistance together to help people communicate and understand their surroundings with greater independence.
 
+## Android portfolio build
+
+This is the main-account portfolio copy. Post-submission Android work happens here; the original hackathon repository and Railway deployment remain frozen and unchanged.
+
+The standalone APK is being built separately with Expo. **An installable APK is not available yet:** the first build is queued, and physical-device QA is still pending. [Follow the build](https://expo.dev/accounts/tahajay/projects/hum-ahang-android-portfolio/builds/64c598dc-bc44-407c-894a-8da1b7def3ef) or read the [Android build and phone QA guide](docs/android-apk.md). The tested APK will be distributed as a release asset, not committed into the source tree. Native AI features still require internet and a temporary server connection.
+
 ## Hackathon web demo
 
 **[Open the live demo](https://humahang-production.up.railway.app)** — one Railway service hosts the web app and its authenticated AI backend. Evaluators can use the separate **private judge link** supplied in the submission: it connects cloud speech/photo features without a terminal or one-time code. The ordinary homepage remains browsable without credentials; operator pairing is still available as a fallback. See [private judge access and QA](docs/judge-access.md) for expiry, shared usage limits, reconnection and rollback, or the [deployment guide](docs/deployment.md) for operator setup. Never publish the private invitation, API keys or operator token in this repository.
