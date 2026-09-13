@@ -2,8 +2,6 @@
 
 HumAhang is an Urdu-first accessibility companion that brings speech, text, and visual assistance together, helping special people communicate, understand their surroundings, and connect with greater independence.
 
-Built for the Bano Qabil × Alibaba Cloud AI Hackathon.
-
 ## Android portfolio build
 
 This is the main-account portfolio copy. Post-submission Android work happens here; the original hackathon repository and Railway deployment remain frozen and unchanged.
